@@ -67,12 +67,22 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "investing-ui:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "investing-ui:build:production"
+              "browserTarget": "investing-ui:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
-              "browserTarget": "investing-ui:build:development"
+              "browserTarget": "investing-ui:build:development",
+              "proxyConfig": "src/proxy.conf.json"
+            },
+            "dev-local": {
+              "browserTarget": "investing-ui:build:local",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

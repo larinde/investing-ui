@@ -1,0 +1,26 @@
+<div class="ui main text container">
+    <h2>Portfolio Overview </h2>
+    <div class="ui two column grid">
+      <div class="column">
+        <table class="ui striped table">
+          <thead>
+            <tr><th>Broker</th>
+            <th>Account Type</th>
+            <th>Total Value</th>
+          </tr></thead>
+          <tbody>
+            <tr *ngFor="let portfolio of portfolioSummaries">
+              <td data-label="Broker">{{portfolio.brokerName}}</td>
+              <td data-label="Account Type">{{portfolio.accountType}}</td>
+              <td data-label="Total Value">{{portfolio.totalValue  | currency:portfolio.currency}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="column">
+      <app-portfolio-summary-piechart 
+         [portfolioSummaries] = "portfolioSummaries">
+      </app-portfolio-summary-piechart>
+    </div>
+    </div>
+</div>
